@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Michal Szekely">
+    <meta name="description" content="Využitie NoSQL databáz v súčasných webových aplikáciách. [Bakalárska práca]. Univerzita Konštantína Filozofa v Nitre. Fakulta prírodných vied. ">
+    <meta name="keywords" content="MongoDB, NoSQL, Model kľúč-hodnota, Model rodiny stĺpcov, Dokumentový model, Grafový model, JavaScript, Relačné databázy, Aggregate, Map_reduce  ">
+    <title>...: Nosql.sk :...</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/small-business.css" rel="stylesheet">
+    <link href="css/one-page-wonder.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">    
+    <link href="css/freelancer.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <img src="_grf/logo.png" alt="">
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="page-scroll"><a href="about.html">O nás</a></li>
+                    <li class="page-scroll"><a href="clanky.html">NoSQL Novinky</a></li>
+                    <li class="page-scroll"><a href="download.html">Download</a></li>
+                    <li class="page-scroll"><a href="cl1.html">Apache dashboard</a></li>                  
+                    <li class="page-scroll"><a href="contact.html">Kontakt</a></li>                  
+                </ul>
+            </div>
+           <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+
+    <!-- Page Content -->
+    <div class="container">
+
+<div>
+
+
+ <a href="#zaver"><b>Záver</a></b><br>
+ <a href="#odkazy"><b>Zoznam bibliografických odkazov</a></b>
+
+            </div>
+
+        <hr>
+        
+        <!-- Pagination -->
+        <div class="row text-center">
+            <div class="col-lg-12">
+                <ul class="pagination">
+                    <li>
+                        <a href="cl3.html">&laquo;</a>
+                    </li>
+                    <li>
+                        <a href="cl1.html">1</a>
+                    </li>
+                    <li>
+                        <a href="cl2.html">2</a>
+                    </li>
+                    <li>
+                        <a href="cl3.html">3</a>
+                    </li>
+                    <li  class="active">
+                        <a href="cl4.html">4</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <hr>
+
+
+        <!-- First Featurette -->
+        <div class="featurette" id="zaver">
+             <h2 class="featurette-heading">Záver</h2>
+            <p class="lead2">
+
+Hlavný cieľ bakalárskej práce stanovený na začiatku jej tvorby sme z nášho pohľadu splnili. Vyvinuli sme a v praxi overili funkčnosť webovej aplikácie, ktorá spolupracuje s jedným z typických reprezentantov NoSQL databáz, konkrétne s databázou MongoDB. Túto a ďalšie NoSQL databázy sme podrobne popísali, ich spoločné charakteristiky porovnali s databázami relačného typu. Z porovnania vyplývajú rozdiely medzi oboma typmi, ktoré sme uviedli v prehľadných tabuľkách. Časť našej práce sme venovali kladom a záporom použitia NoSQL databáz, pričom sme uviedli i konkrétne produkty, v ktorých sa NoSQL databázy uplatňujú. 
+<br><br>
+Našu webovú aplikáciu Apache Dashboard sme naprogramovali v najnovšom štandarde Jazyka JavaScript. Generuje a súčasne spracováva dáta databáz typu NoSQL, konkrétne MongoDB. Dáta tvoria jednotlivé záznamy, ktorých súčasťou je okrem iného: IP adresa používateľa; dátum a čas, v akom sa používateľovi stránka zobrazila v jeho internetovom prehliadači; informácie o použitom internetovom prehliadači a operačnom systéme, veľkosť dát poskytnutých klientovi... Aplikácia jednoduchými štatistickými výpočtami vytvára údaje požadované hypotetickým klientom – majiteľom webovej stránky a prostredníctvom Google Visualization ich transformuje do ním požadovanej grafickej formy. Grafy preto zobrazujú údaje o návštevnosti webovej stránky v jednotlivých dňoch, týždňoch a mesiacoch, a tiež údaje o lokalite, z ktorej návštevník pravdepodobne pochádza, resp. aký internetový prehliadač používa. Neoddeliteľnou súčasťou práce je aj porovnanie rýchlosti funkcií  Map_Reduce a Aggregate.
+<br><br>
+V budúcnosti chceme našu aplikáciu Apache Dashboard prispôsobiť reálnym požiadavkám reálneho klienta a majiteľom webových stránok ju ponúkať ako voľne šíriteľnú.
+   
+            
+            </p>
+        </div>
+
+        <div class="featurette" id="odkazy">
+             <h2 class="featurette-heading">Zoznam bibliografických odkazov</h2>
+            <p class="lead2">
+<b>ABADI, D.</b> 2010. Distinguishing Two Major Types of Column-Stores [online]. [cit. 17.11.2015] Dostupné na internete: <http://dbmsmusings.blogspot.cz/2010/03/distinguishing-two-major-types-of_29.html>.
+<br>
+<b>AYENDE.COM.</b> 2013. Column Databases. [online] 2013. [cit. 2015-15-10]. Dostupné na internete: <http://ayende.com/blog/4500/that-no-sql-thing-column-family-databases>.
+<br>
+<b>BAIN, T.</b> 2009. Is the Relation Database doomed. [online] 2009. [cit. 2015-17-10]. Dostupné na internete: <http://readwrite.com/2009/02/12/is-the-relational-database-doomed>.
+<br>
+<b>Beany.CO.KR:</b> 2011. Visual Guide to NoSQL Systems. [online] 2011. [cit. 2015-17-10]. Dostupné na internete:  <http://blog.beany.co.kr/archives/275>.
+<br>
+<b>CHICKEN, G.</b> 2009. Latency Is Everywhere And It Costs You Sales: How To Crush It. High Scalabi-lity [online] 2009. [cit. 17.11.2015] Dostupné na internete: <http://highscalability.com/latency-everywhere-and-it-costs-you-sales-how-crush-it>. 
+<br>
+<b>COCKCROFT, A.</b>, 2010. Benchmarking Cassandra Scalability on AWS - Over a million writes per second. [online] 2011. [cit. 17.11.2015] Dostupné na internete: <http://techblog.netflix.com/2011/11/benchmarking-cassandra-scalability-on.html>.
+<br>
+<b>CONOLLY, T.</b> 2009. Mistrovství - databáze. Brno : Computer Press, 2009. 584 s. ISBN 978-80-251-2328-7. 
+<br>
+<b>COGSWELL, J.</b> 2012. SQL vs. NoSQL Which is Better. [online] 2012. [cit. 2015-09-25]. Dostupné na internete: <http://slashdot.org/topic/bi/sql-vs-nosql-which-is-better>.
+<br>
+<b>DATE, C.</b> 2012. SQL and relational theory: How to write accurate SQL code. Sebastopol, CA: O'Reilly, 2012. 428 s. ISBN 978-144-9316-402.
+<br>
+<b>FOWLER, M.</b> 2012. NosqlDefinition. Martin Fowler [online] 2012. [cit. 2015-06-05]. Dostupné na internete:   <http://martinfowler.com/bliki/NosqlDefinition.html>.
+<br>
+<b>FOWLERUK, A.</b> 2013. Thoughts on NoSQL & Big Data Architecture. In: Marklogic [online] 2013. [cit. 2015-11-15]. Dostupné na internete:    <https://adamfowlerml.wordpress.com/2013/04/29/thoughts-on-nosql-big-data-architecture>.
+<br>
+<b>KOPAL, O.</b> 2015. Historie a trendy ve vývoji databází [online] 2015. [cit. 17.11.2015] Dostupné na internete: <http://www.web-integration.info/cs/blog/historie-a-trendy-ve-vyvoji-databazi/>.
+<br>
+<b>KLOBÁSA, P.</b> 2012. Letmý pohľad na MongoDB. [online] 2012. [cit. 17.11.2015] Dostupné na internete: <http://vsadnajavu.cz/2012-01/databaze/letmy-technologicky-pohled-na-mongodb/>.
+<br>
+<b>LITHO, A., MATTSSON, J.</b> 2010. Investigating storage solutions for large data:        [online] [cit. 2015-11-15]. Dostupné na internete: <http://publications.lib.chalmers.se/records/fulltext/123839.pdf>.
+<br>
+<b>MCCREARY, D., KELLY, A.</b> Making sense of NoSQL: a guide for managers and the rest of us. Shelter Island: Manning, 2013. 286 s. ISBN 978-161-7291-074.
+<br>
+<b>MOLINARO, A.</b> 2014. SQL cook book. In : SQL select command. COMPUTER PRESS 2014. 161 s. ISBN 9780596009762. 
+<br>
+<b>MONGODB. MongoDB Manual.</b> [online]. 2016. [cit. 17.11.2015] Dostupné na internete: <http://docs.mongodb.org/manual/>.
+<br>
+<b>NÁVRAT, R. 2009. </b>Oracle 11gR2 - Hybrid columnar compression. Oracle Czech BI / DW Blog [online]. 2009. [cit. 17.11.2015] Dostupné na internete: <http://bidwcz.blogspot.cz/2009/11/oracle-11gr2-hybrid-columnar.html>.
+<br>
+<b>OPPEL, A. 2006.</b> Databáza bez předchozích znalostí. Brno: Computer Press, 2006. 320 s. ISBN 80-251-1199-7.
+<br>
+<b>PRAMOD, J. 2013.</b> NoSQL Distilled NoSQL. In : Learning the NOSQL basics. WROXX 2013. 70 s. ISBN 9780321826626.
+<br>
+<b>SADALAGE, P. J., FOWLER, M.</b> NoSQL distilled : a brief guide to the emerging world of polyglot persistence. Addison-Wesley, 2013. 164 s. ISBN 9780321826626.
+<br>
+<b>STRAUCH, C. </b>2011. NoSQL Databases. [online] [cit. 2015-08-05]. Dostupné na internete: <http://www.christof-strauch.de/nosqldbs.pdf>.
+<br>
+<b>STROZZI, Carl.</b> NoSQL: A Relational Database Management System. NoSQL: a non-SQL RDBMS [online] [cit. 2015-11-20]. Dostupné na internete: <http://www.strozzi.it/cgi-bin/CSA/tw7/I/en_US/nosql/Home%20Page>. 
+<br>
+<b>VAISH, G. 2013.</b> Getting started with NoSQL: Your guide to the world and technology of NoSQL. 1. vyd. Birmingham: Packt Publishing, 2013, 142 s.. ISBN 978-1-84969-4-988.
+<br>
+<b>WARDEN, P. 2011.</b> Big Data Glossary. Sebastopol : O'REILLY, 2011. 62 s. ISBN 978-1-449-31459-0.
+            
+            </p>
+        </div>
+
+        <hr>
+
+
+        <hr>
+
+        <!-- Pagination -->
+        <div class="row text-center">
+            <div class="col-lg-12">
+                <ul class="pagination">
+                    <li>
+                        <a href="cl3.html">&laquo;</a>
+                    </li>
+                    <li>
+                        <a href="cl1.html">1</a>
+                    </li>
+                    <li>
+                        <a href="cl2.html">2</a>
+                    </li>
+                    <li>
+                        <a href="cl3.html">3</a>
+                    </li>
+                    <li  class="active">
+                        <a href="cl4.html">4</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; NoSQL.sk 2016 | <a href="mailto:admin@nosql.sk">admin(@)nosql.sk</a>  
+                    
+                    <a  href="http://www.facebook.com/michal.szekely" target="_blank">
+                       <i class="fa fa-facebook-square" style="font-size:20px"></i></a>
+  
+                    <a  href="https://www.linkedin.com/in/michal-szekely-435076a?trk=hp-identity-name"  target="_blank" >
+                      <i class="fa fa-linkedin-square" style="font-size:20px"></i></a>
+                     </p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
