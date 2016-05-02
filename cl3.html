@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Michal Szekely">
+    <meta name="description" content="Využitie NoSQL databáz v súčasných webových aplikáciách. [Bakalárska práca]. Univerzita Konštantína Filozofa v Nitre. Fakulta prírodných vied. ">
+    <meta name="keywords" content="MongoDB, NoSQL, Model kľúč-hodnota, Model rodiny stĺpcov, Dokumentový model, Grafový model, JavaScript, Relačné databázy, Aggregate, Map_reduce  ">
+    <title>...: Nosql.sk :...</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/small-business.css" rel="stylesheet">
+    <link href="css/one-page-wonder.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">    
+    <link href="css/freelancer.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <img src="_grf/logo.png" alt="">
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="page-scroll"><a href="about.html">O nás</a></li>
+                    <li class="page-scroll"><a href="clanky.html">NoSQL Novinky</a></li>
+                    <li class="page-scroll"><a href="download.html">Download</a></li>
+                    <li class="page-scroll"><a href="cl1.html">Apache dashboard</a></li>                  
+                    <li class="page-scroll"><a href="contact.html">Kontakt</a></li>                  
+                </ul>
+            </div>
+           <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+<div>
+ <a href="#4"><b>4          Výsledky riešenia a ich zhodnotenie</a></b><br>   
+&nbsp; <a href="#4.1">4.1               Stručná charakteristika webovej aplikácie</a><br>   
+&nbsp; <a href="#4.2">4.2               Štruktúra webovej aplikácie a tok dát medzi jej súčasťami</a><br>   
+&nbsp; <a href="#4.3">4.3               Popis výstupných modulov</a><br>   
+&nbsp;&nbsp; <a href="#4.3.1">4.3.1                Spôsob vykreslovania grafov</a><br>   
+&nbsp; <a href="#4.4">4.4               Charakteristika záznamov v MongoDB</a><br>   
+&nbsp; <a href="#4.5">4.5               Porovnanie spracovania záznamov</a><br>   
+&nbsp;&nbsp; <a href="#4.5.1">4.5.1                Zápis funkcie Aggregate pre modul „Výkonnostné testy“ pre jeden deň</a><br>   
+&nbsp;&nbsp <a href="#4.5.2">4.5.2                Zápis funkcie Map_reduce pre modul „Výkonnostné testy“ pre jeden deň</a><br>   
+</div>
+
+       <hr>
+      <!-- Pagination -->
+        <div class="row text-center">
+            <div class="col-lg-12">
+                <ul class="pagination">
+                    <li>
+                        <a href="cl2.html">&laquo;</a>
+                    </li>
+                    <li>
+                        <a href="cl1.html">1</a>
+                    </li>
+                    <li>
+                        <a href="cl2.html">2</a>
+                    </li>
+                    <li class="active">
+                        <a href="cl3.html">3</a>
+                    </li>
+                    <li>
+                        <a href="cl4.html">4</a>
+                    </li>
+                    <li>
+                        <a href="cl4.html">&raquo;</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- First Featurette -->
+        <div class="featurette" id="4">
+             <h2 class="featurette-heading">4          Výsledky riešenia a ich zhodnotenie</h2>
+            <p class="lead2">
+V teoretickej časti našej bakalárskej práce sme vymedzili pojem NoSQL databáza, popísali rôzne dátové modely NoSQL databáz, 
+charakterizovali relačné databázy a uviedli typické rozdiely medzi NoSQL a relačnými databázami. Teoretické výsledky našej práce budú využité ako podklad pre tvorbu článkov z informatiky a tie 
+následne publikované na vzdelávacom portáli Encyklopédia poznania. Zvýšenú pozornosť sme venovali databáze MongoDB, 
+ ktorej záznamy využíva naša webová aplikácia. Funkčnú webovú aplikáciu je možne vyskúšať na webovej adrese www.nosql.sk:3000.
+
+            </p>
+        </div>
+
+        <hr>
+        
+        <div class="featurette" id="4.1">
+             <h2 class="featurette-heading">4.1               Stručná charakteristika webovej aplikácie</h2>
+            <p class="lead2">
+Aplikácia bola vytvorená s architektúrou klient-server a je napísaná v modernom ES2015, čo je najnovší štandard JavaScriptu. 
+Využíva framework Node.JS ktorý sa skladá z dvoch hlavných komponentov NPM v 3.6.0 a Node, pričom: 
+<br>
+&bull;      <b>NPM</b> – inštaluje závislostí použité v aplikácii,<br>
+
+– spúšťa rôzne používateľom definované skripty, <br>
+
+&bull;      <b>Node</b> – kompiluje a zároveň vykonáva JS súbory.<br>
+
+  
+            </p>
+        </div>
+
+        <hr>
+        
+        <div class="featurette" id="4.2">
+             <h2 class="featurette-heading">4.2               Štruktúra webovej aplikácie a tok dát medzi jej súčasťami</h2>
+            <p class="lead2">
+Jednotlivé súčasti aplikácie tvorí niekoľko zložiek a súborov, ktorých funkciu môžeme popísať nasledovne:
+<br>
+&bull;      <b>app.js</b> – vytvorenie Expess servera a pripojenie do databázy MongoDB,<br>
+&bull;      <b>package.json</b> – definovanie závislostí NPN, načítanie skriptov pre spustenie http servera a generovanie záznamov,<br>
+&bull;      <b>webpack.config.js config</b> – kompilovanie kódu pre prehliadač, <br>
+&bull;      <b>data</b> – zložka dát resp. záznamy databázy MongoDB,<br>
+&bull;      <b>models</b> – definovanie prístupov do databázy a definovanie štruktúry záznamov,<br>
+&bull;      <b>bin</b> – skript pre spustenie http servera,<br>
+&bull;      <b>config</b> – definovanie adresy pripojenia do databázy,<br>
+&bull;      <b>node_moduls</b> – nainštalovanie závislosti komponentov NPN,<br>
+&bull;      <b>public</b> – súbory HTML, CSS a JS zasielané klientovi (prehliadaču),<br>
+&bull;      <b>routes</b> – dáta pre dizajn a vykresľovanie grafov,<br>
+&bull;      <b>temlates</b> – šablóna pre vytvorenie webovej stránky, <br>
+&bull;      <b>utils</b> – pomocné skripty,<br>
+&bull;      <b>views</b> – vykreslenie „pohľadov“ stránky.<br>
+<br>
+Uvádzame aj zjednodušenú schému toku dát (obrázok 6). 
+
+        <center>
+     Obrázok 6:  Dátový tok <br> 
+<img src="_grf/apache/image006.png">
+           </center>      
+<img src="_grf/apache/image007.png"> požiadavky prehliadača<br> 
+<img src="_grf/apache/image008.png"> konfiguračné súbory http<br> 
+<img src="_grf/apache/image009.png"> konfiguračné súbory MongoDB<br> 
+<img src="_grf/apache/image010.png"> šablóny pre vytvorenie používateľského rozhrania
+            </p>
+        </div>
+
+        <hr>
+        
+        <div class="featurette" id="4.3">
+             <h2 class="featurette-heading">4.3               Popis výstupných modulov</h2>
+            <p class="lead2">
+Výstupné moduly Aktivita, Top regióny (moduly realizované funkciou Aggregate), Deň, Týždeň, Mesiac, Rok, Najpoužívanejšie prehliadače, Najpoužívanejšie systémy a 
+Najnavštevovanejšie stránky a súbory (moduly sú realizované funkciou Map-Reduce), realizujú jednoduché štatistické výpočty, ich forma bola  prispôsobená štandardu služby Google Visualization, 
+ktorá požadované grafy z odoslaných hodnôt vyrába automaticky. 
+<br>
+Webová aplikácia ktorú je možno vidieť na www.nosql.sk:3000, je rozdelená na 5 samostatných podstránok: Prehľad, Aktivita, Prístupy, Používatelia, Výkon.
+<br>
+Podstránka „Prehľad” obsahuje moduly, ktoré pomocou grafov a číselného zobrazenia, zobrazujú údaje o počte návštev, počte unikátnych návštev, počte navštívených stránok a prenesených dátach za 
+aktuálny deň (obrázok 7). Na podstránke sa taktiež nachádza graf s tabuľkou, ktorý  poskytuje informáciu o geografickom pôvode návštevníkov stránky (obrázok 8). Interaktívne grafy ponúkajú možnosť 
+po prejdení myšou zobraziť konkrétne počty za daný čas.
+
+        <center>
+<img src="_grf/apache/image011.png">
+<br>
+Obrázok 7:  Ukážka grafu vytvoreným modulom webovej aplikácie Aktivita
+           </center> 
+
+        <center>
+<img src="_grf/apache/image012.png">
+<br>
+Obrázok 8:  Ukážka grafu vytvoreným modulom webovej aplikácie Top Regióny
+           </center> 
+
+<br>
+Štatistické zobrazenia výsledkov za konkrétny deň, týždeň, mesiac a rok sa nachádzajú na podstránke „Aktivita“. Jednotlivé grafy sú vyobrazením spracovaných záznamov o počte prístupov za 
+jednotku času. Graf deň zobrazuje počet návštevníkov stránky v priebehu jedného dňa podľa hodín (obrázok 9). Pri týždňovom grafe sú poskytnuté informácie totožné. Jednotlivé stĺpce grafu 
+predstavujú jednotlivé dni v týždni (obrázok 10).  Na podstránke sa nachádzajú ďalšie grafy, ktoré reprezentujú údaje o návštevníkoch za mesiac (obrázok 11) a rok (obrázok 12). Pod 
+každým grafom sa nachádza prehľadná tabuľka, ktorá obsahuje informácie o počte návštevníkov, unikátnych návštevníkov a dátovom toku za jednotlivé hodiny, dni, týždne a mesiace (obrázok 13).
+
+        <center>
+<img src="_grf/apache/image013.png">
+<br>
+Obrázok 9:  Ukážka grafu vytvoreným modulom webovej aplikácie Deň
+           </center> 
+  <br>         
+                   <center>
+<img src="_grf/apache/image014.png">
+<br>
+Obrázok 10:  Ukážka grafu vytvoreným modulom webovej aplikácie Týždeň
+           </center> 
+ <br>          
+                   <center>
+<img src="_grf/apache/image015.png">
+<br>
+Obrázok 11:  Ukážka grafu vytvoreným modulom webovej aplikácie Mesiac
+           </center> 
+  <br>         
+                   <center>
+<img src="_grf/apache/image016.png">
+<br>
+Obrázok 12:  Ukážka grafu vytvoreným modulom webovej aplikácie Rok
+           </center> 
+<br>
+                   <center>
+<img src="_grf/apache/image017.png">
+<br>
+Obrázok 13:  Ukážka tabuľky pod grafom, vytvorenej modulom webovej aplikácie Týždeň
+</center>
+
+<br>
+Podstránka „Používatelia“ poskytuje používateľovi našej aplikácie informácie o druhoch použitých prehliadačov internetových stránok (obrázok 14) a použitom operačnom systéme (obrázok 15)
+ návštevníka webovej stránky. Ku grafom prislúcha aj tabuľka s číselnými informáciami, ktorá je číselným vyobrazením grafov. 
+<br><br>
+                   <center>
+<img src="_grf/apache/image018.png">
+<br>
+Obrázok 14:  Ukážka grafu vytvoreným modulom webovej aplikácie Najpoužívanejšie prehliadače
+</center>
+<br>
+                   <center>
+<img src="_grf/apache/image019.png">
+<br>
+Obrázok 15:  Ukážka grafu vytvoreným modulom webovej aplikácie Najpoužívanejšie systémy
+</center>
+
+
+<br>
+Položka menu „Prístupy“ slúži na prístup k podstránke, na ktorej sa nachádza prehľad najnavštevovanejších stránok a súborov, ktoré návštevník webovej stránky prezeral (obrázok 16). 
+Poskytuje informácie o počte návštev konkrétnej stránky alebo súboru,  type protokolu http a priebehu, s akým prebehla komunikácia medzi klientom a serverom.
+<br><br>
+                   <center>
+<img src="_grf/apache/image020.png">
+<br>
+Obrázok 16:  Ukážka grafu vytvoreným modulom webovej aplikácie Najnavštevovanejšie stránky a súbory
+</center>
+            
+            </p>
+        </div>
+
+        <hr>
+        
+        <div class="featurette" id="4.3.1">
+             <h2 class="featurette-heading">4.3.1                Spôsob vykreslovania grafov</h2>
+            <p class="lead2">
+  V našej aplikácii sme na vykresľovanie grafov použili produkt spoločnosti Google Visualization. Ide o nástroj ponúkajúci generovanie statických a dynamických grafov. Galéria Google grafov (obrázok 17) ponúka celý rad grafov, ktorých cieľom je vizualizácia dát. Tieto grafy sú založené na technológii HTML5/SVG, sú interaktívne s možnosťou približovania a ich zobrazovanie nevyžaduje inštaláciu žiadneho dodatočného komponentu do internetového prehliadača. Je možné požadovať niekoľko typov grafov (koláčový, stĺpcový, čiarový, pruhový, plošný...). 
+  <br><br>
+                     <center>
+<img src="_grf/apache/image021.png" height="95">
+<img src="_grf/apache/image022.png" height="95">
+<img src="_grf/apache/image023.png" height="95">
+<img src="_grf/apache/image024.png" height="95">
+<img src="_grf/apache/image025.png" height="95">
+<img src="_grf/apache/image026.png" height="95">
+<img src="_grf/apache/image027.png" height="95">
+
+<br>
+Obrázok 17:  Ukážka rôznych typov grafov Google Visualization
+</center>
+  
+  
+  <br>
+  Nasledovný zdrojový kód je ukážka vykreslenia grafu pomocou Google Visualization.  Začiatok kódu je zadefinovanie HTML hlavičky, následne je potrebné zadať webovú cestu k JavaScriptu, 
+  ktorý bude zabezpečovať samotné vykreslenie grafu (loader.js). Určíme veľkosť grafu v pixeloch. V tele kódu zadefinujeme hodnoty, ktoré má graf zobrazovať a typ grafu, 
+  ktorý máme záujem vykresliť. V našej ukážke sa bude vykresľovať koláčový graf (piechart).
+ 
+      <p class="scripty">
+&lt; !DOCTYPE html><br>
+&lt;html lang="en"><br>
+&lt;head><br>
+&lt;meta charset="UTF-8"><br>
+&lt;meta http-equiv="X-UA-Compatible" content="IE=edge"><br>
+    &lt;title>Ukazka Grafu&lt;/title><br>
+    &lt;script type="text/javascript" src="https://www.gstatic.com/charts/loader.js">&lt;/script><br>
+    &lt;div id="piechart" style="width: 900px; height: 500px;">&lt;/div><br>
+      &lt;script type="text/javascript">    <br>
+          google.charts.load('current', {'packages':['corechart']});<br>
+      google.charts.setOnLoadCallback(drawChart);<br>
+      function drawChart() {<br>
+        var data = google.visualization.arrayToDataTable([<br>
+          ['Browsers', 'Visit per Day'],<br>
+          ['Chrome',     150],<br>
+          ['IE',      98],<br>
+          ['Mobile Safari',  147],<br>
+          ['Firefox', 260],<br>
+          ['Edge',    53],<br>
+          ['Safari',    36]<br>
+        ]);<br>
+        var options = {<br>
+          title: 'Najpoužívanejšie prehliadače'<br>
+        };<br>
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));<br>
+        chart.draw(data, options);<br>
+      }<br>
+    &lt;/script>    <br>
+&lt;/head><br>
+ &lt;body><br>
+    &lt;div id="piechart">&lt;/div><br>
+  &lt;/body><br>
+&lt;/html>
+
+</p> 
+            
+            </p>
+        </div>
+
+        <hr>
+        
+        <div class="featurette" id="4.4">
+             <h2 class="featurette-heading">4.4               Charakteristika záznamov v MongoDB</h2>
+            <p class="lead2">
+    Momentálny počet záznamov v databáze presahuje číslo 300 000, časový rámec generovaných dát pokrýva roky 2015, 2016. Maximálny počet IP adries, prehliadačov a webových stránok nie je limitovaný.        
+            </p>
+        </div>
+
+        <hr>
+        
+        <div class="featurette" id="4.5">
+             <h2 class="featurette-heading">4.5               Porovnanie spracovania záznamov</h2>
+            <p class="lead2">
+  Obe funkcie (Aggregate a Map_reduce) sú funkciami NoSQL databázy. Majú rovnaký účel, ale ich použitie a možnosti sa líšia. Pri výkonnostných testoch sme porovnávali rýchlosť spracovania záznamov za
+   tri časové jednotky, za jeden deň, jeden mesiac a 4 mesiace V našom teste sa spracovali záznamy uložené v databáze MongoDB za mesiac Február 2016, ako referenčný deň bol zvolený 1. 
+   Február 2016 a 4 mesiace pokrývali záznamy za mesiace November 2015, December 2015, Január 2016, Február 2016. Počet spracovaných záznamov predstavoval 424 záznamov za 1 deň, 11 633 záznamov za 
+   mesiac a 49 523 záznamov za 4 mesiace (obrázok 18). 
+<br><br>
+                   <center>
+<img src="_grf/apache/image028.png">
+<br>
+Obrázok 16:  Ukážka grafu vytvoreným modulom webovej aplikácie Najnavštevovanejšie stránky a súbory
+</center>
+<br>
+  Z výsledkov nášho testu vyplýva, že funkcia Aggregate je mnohonásobne rýchlejšia ako Map_reduce pri spracovaní väčšieho počtu dát. Tabuľka nad grafom popisuje, koľko sekúnd bolo potrebných na 
+  spracovanie daného počtu záznamov. Tieto výsledky sme premietli do grafového zobrazenia (obrázok 16). Väčšiu rýchlosť dopytovania funkciou Map_reduce dosiahneme pri použití väčšieho počtu 
+  databázových uzlov. 
+  
+            
+            </p>
+        </div>
+
+        <hr>
+        
+        <div class="featurette" id="4.5.1">
+             <h2 class="featurette-heading">4.5.1                Zápis funkcie Aggregate pre modul „Výkonnostné testy“ pre jeden deň</h2>
+            <p class="lead2">
+  Do funkcie $match sú vybrané všetky prvky z databázy na základe vybraného dátumu (od do). Dáta z nej sú následne predané do funkcie $group, ktorá určuje, ako bude výsledné pole vyzerať. 
+  V našom prípade [{ _id: dátum/čas, value: 1}]. Hodnota value bude vždy 1, keďže naše dátumy uložené v databáze MongoDB sú unikátne. Ako posledný krok sú výsledné dáta odovzdané funkcii callback.          
+  
+     <p class="scripty">
+AccessSchema.statics.getAggregateTest = function(dateFrom, dateTo, callback) {<br>
+    this.model('AccessLog').aggregate([<br>
+        { $match: {<br>
+            time: { $gte: dateFrom, $lt: dateTo }<br>
+        }},<br>
+        { $group: {<br>
+            _id: "$time",<br>
+            value: { $sum: 1 }<br>
+        }}<br>
+    ], callback);<br>
+};
+</p>
+            </p>
+        </div>
+
+        <hr>
+        
+        
+        <div class="featurette" id="4.5.2">
+             <h2 class="featurette-heading">4.5.2                Zápis funkcie Map_reduce pre modul „Výkonnostné testy“ pre jeden deň</h2>
+            <p class="lead2">
+Ako v prípade funkcie Aggregate aj $match je úloha funkcie map totožná, s tým rozdielom, že rozsah dátumu (od do) je definovaný vo funkcii query.  Na základe query databáza vyberie požadované prvky a 
+Map ich uloží do objektu, ktorý je predaný funkcii Reduce. Funkcia  Reduce realizuje to isté, čo funkcia $group vAggregate. Určuje, ako budú dáta (výsledné pole) vyzerať. 
+<br>
+Pri funkcii Map_reduce je možné vytvoriť aj novú kolekciu (out: { inline: 1 }). Inline znamená, že táto nová kolekcia, ktorá je výstup z Reduce, bude uložená iba v pamäti RAM a nezapíše sa fyzicky do
+ databázy. Posledný krok je totožný s posledným krokov v Aggregate a výsledné dáta sú odovzdané funkcii callback.
+   
+   
+   <p class="scripty">
+AccessSchema.statics.getMapReduceTest = function(dateFrom, dateTo, callback) {<br>
+    var filter = {<br>
+        map: function() {<br>
+            emit(this.time, 1);<br>
+        },<br>
+        reduce: function(key, values) {<br>
+            return Array.sum(values);<br>
+        },<br>
+        query: {<br>
+            time: { $gte: dateFrom, $lt: dateTo }<br>
+        },<br>
+        out: { inline: 1 }<br>
+    };<br>
+    this.model('AccessLog').mapReduce(filter, callback);<br>
+};
+
+</p>
+            
+            </p>
+        </div>
+
+        <hr>
+      <!-- Pagination -->
+        <div class="row text-center">
+            <div class="col-lg-12">
+                <ul class="pagination">
+                    <li>
+                        <a href="cl2.html">&laquo;</a>
+                    </li>
+                    <li>
+                        <a href="cl1.html">1</a>
+                    </li>
+                    <li>
+                        <a href="cl2.html">2</a>
+                    </li>
+                    <li class="active">
+                        <a href="cl3.html">3</a>
+                    </li>
+                    <li>
+                        <a href="cl4.html">4</a>
+                    </li>
+                    <li>
+                        <a href="cl4.html">&raquo;</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; NoSQL.sk 2016 | <a href="mailto:admin@nosql.sk">admin(@)nosql.sk</a>  
+                    
+                    <a  href="http://www.facebook.com/michal.szekely" target="_blank">
+                       <i class="fa fa-facebook-square" style="font-size:20px"></i></a>
+  
+                    <a  href="https://www.linkedin.com/in/michal-szekely-435076a?trk=hp-identity-name"  target="_blank" >
+                      <i class="fa fa-linkedin-square" style="font-size:20px"></i></a>
+                     </p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
