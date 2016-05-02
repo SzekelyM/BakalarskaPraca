@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Michal Szekely">
+    <meta name="description" content="Využitie NoSQL databáz v súčasných webových aplikáciách. [Bakalárska práca]. Univerzita Konštantína Filozofa v Nitre. Fakulta prírodných vied. ">
+    <meta name="keywords" content="MongoDB, NoSQL, Model kľúč-hodnota, Model rodiny stĺpcov, Dokumentový model, Grafový model, JavaScript, Relačné databázy, Aggregate, Map_reduce  ">
+    <title>...: Nosql.sk :...</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/small-business.css" rel="stylesheet">
+    <link href="css/one-page-wonder.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">    
+    <link href="css/freelancer.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <img src="_grf/logo.png" alt="">
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="page-scroll"><a href="about.html">O nás</a></li>
+                    <li class="page-scroll"><a href="clanky.html">NoSQL Novinky</a></li>
+                    <li class="page-scroll"><a href="download.html">Download</a></li>
+                    <li class="page-scroll"><a href="cl1.html">Apache dashboard</a></li>                  
+                    <li class="page-scroll"><a href="contact.html">Kontakt</a></li>                  
+                </ul>
+            </div>
+           <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+
+    <!-- Page Content -->
+<div class="container">
+
+<div class="page-header">
+    <h1>MongoDB 3.2 entices enterprises with encryption and analytics</h1>
+<h4>With new analytics connectors and in-memory processing, the NoSQL database seeks a broader enterprise audience than only the DBAs who've taken it to heart </h4>
+</div>
+<img src="http://images.techhive.com/images/article/2015/03/mongodb-100573521-primary.idge.jpg" alt="" align="left" height="150" vspace="5" hspace="10">
+With version 3.2 of MongoDB, the makers of the NoSQL JSON document database system are attempting to widen its appeal by adding storage engines for encrypted data and in-memory processing, plus a set of connectors for common third-party BI tools such as Tableau.
+<br><br>
+The encryption engine is for holding JSON document data that's at rest. Each database is encrypted with a separate key, with the encryption transparent to any applications, and the system can be managed by an external appliance that uses KMIP. That said, at-rest encryption for databases generally provides protection against only direct physical access of the database. Techniques like data masking provide more robust protection against the most common sorts of database attacks.
+<br><br>
+With the in-memory storage engine, the database can retain a particular class of data -- such as data for current user sessions -- for faster processing. With a storage engine for in-memory processing, as opposed to a separate cache layer, data is automatically synchronized between in-memory and conventional storage engines. Aside from raising the ante against another common NoSQL competitor, Couchbase, this potentially puts MongoDB in competition with in-memory systems like Aerospike.
+<br><br>
+The BI connectors are MongoDB's attempt to entice business analysts and data scientists. InfoWorld's Andy Oliver got early wind of them back in June and noted that  they enabled more processing to be done in the database, "whereas most of the existing [third-party] connectors do a lot of filtering and aggregation on the client."
+<br><br>
+Client aggregation typically produces a bottleneck, so performing more of the processing in MongoDB provides a speed boost. The BI connectors in MongoDB 3.2 provide full SQL access to the external tools, with SQL queries rewritten as MongoDB aggregation queries, and the results are delivered to the tool as tables.
+<br><br>
+Other new tools include MongoDB Compass, a GUI for exploring MongoDB databases, and integrations for application performance monitoring products like New Relic and AppDynamics.
+<br><br>
+MongoDB made its biggest leap in recent memory with the release of its 3.0 version earlier this year, which added the pluggable storage engine architecture used to greater advantage now. Now that the product is evincing the kind of maturity expected from it, the next step will be to see if it can draw in a broader audience from those who care less about where their data is stored and more about how to get useful info from it.
+
+
+
+        <hr>
+
+        <!-- Pagination -->
+        <div class="row text-center">
+            <div class="col-lg-12">
+                <ul class="pagination">
+
+                    <li class="active">
+                        <a href="clanky.html">Späť</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; NoSQL.sk 2016 | <a href="mailto:admin@nosql.sk">admin(@)nosql.sk</a>  
+                    
+                    <a  href="http://www.facebook.com/michal.szekely" target="_blank">
+                       <i class="fa fa-facebook-square" style="font-size:20px"></i></a>
+  
+                    <a  href="https://www.linkedin.com/in/michal-szekely-435076a?trk=hp-identity-name"  target="_blank" >
+                      <i class="fa fa-linkedin-square" style="font-size:20px"></i></a>
+                     </p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Michal Szekely">
+    <meta name="description" content="Využitie NoSQL databáz v súčasných webových aplikáciách. [Bakalárska práca]. Univerzita Konštantína Filozofa v Nitre. Fakulta prírodných vied. ">
+    <meta name="keywords" content="MongoDB, NoSQL, Model kľúč-hodnota, Model rodiny stĺpcov, Dokumentový model, Grafový model, JavaScript, Relačné databázy, Aggregate, Map_reduce  ">
+    <title>...: Nosql.sk :...</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/small-business.css" rel="stylesheet">
+    <link href="css/one-page-wonder.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">    
+    <link href="css/freelancer.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <img src="_grf/logo.png" alt="">
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="page-scroll"><a href="about.html">O nás</a></li>
+                    <li class="page-scroll"><a href="clanky.html">NoSQL Novinky</a></li>
+                    <li class="page-scroll"><a href="download.html">Download</a></li>
+                    <li class="page-scroll"><a href="cl1.html">Apache dashboard</a></li>                  
+                    <li class="page-scroll"><a href="contact.html">Kontakt</a></li>                  
+                </ul>
+            </div>
+           <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+
+    <!-- Page Content -->
+<div class="container">
+
+<div class="page-header">
+    <h1>NoSQL is still the cool kid in class</h1>
+<h4>Has the shine worn off NoSQL? Hardly. The NoSQL document database MongoDB in particular continues a meteoric rise in popularity</h4>
+</div>
+<img src="http://images.techhive.com/images/article/2015/01/cool_city_limits-100539678-primary.idge.jpg" alt="" align="left" height="150" vspace="5" hspace="10">
+Apparently NoSQL isn't hip anymore.
+<br><br>
+Oliver means this as a backhanded compliment for NoSQL, intended to suggest that NoSQL has gone so mainstream that it's no longer a conversation starter at parties. He's right -- it's a lame conversation starter -- but he's absolutely wrong that the buzz has faded from NoSQL.
+<br><br>
+Oliver was simply looking in the wrong places.
+<br><br>
+<b>Plenty of buzz to go around</b>
+<br>
+The idea for Oliver's post was apparently sparked by his attendance at a Couchbase event. If we look at the top 10 most popular databases, as measured across a range of factors by DB-Engines, Couchbase is nowhere to be seen:
+<b></b>
+Nor will you find it in the top 20 most popular databases. In fact, it barely limps into the top 25 and hasn't moved from No. 24 in the last year.
+<b></b>
+"The weird buzz was the lack of buzz" at the Couchbase event, Oliver writes. But given that Couchbase is an order of magnitude less popular than MongoDB, for example, why would he expect anything else?
+<b></b>
+Responding to Oliver's article, Kelly Stirman, vice president of Strategy and Product Marketing at MongoDB, told me:
+<br><br>
+    To say NoSQL isn't "hip" anymore is flat out wrong. Today, virtually all of the Fortune 100 are users of MongoDB, and more than 40 are production customers. Moreover, MongoDB is still the top database technology of choice for developers at hackathons.
+<br><br>
+Hipster hackers, in other words, are getting chummy with their besuited enterprise peers. And they're downloading the database to the tune of 20,000 times per day, a number that has consistently grown over the past three years. With numbers that big, there's plenty of room for hipster hackers and suits alike.
+<br><br>
+Nor is this only a MongoDB thing.
+<br><br>
+Having recently attended the DataStax-founded Cassandra Summit, I saw firsthand the massive, buzzy embrace of a popular NoSQL database. Jonathan Ellis, DataStax co-founder and CTO, and development lead for Cassandra, explained to me in an interview that interest is soaring:
+<br><br>
+    I've never felt more buzz around this community than at the recent Cassandra Summit, which saw over 8,000 engineers, DBAs, and architects attend both in-person and online. The hacker crowd is outnumbered now as Cassandra hits mass adoption, but they're still here and still pushing the envelope.
+<br><br>
+That doesn't sound like buzzkill to me.
+<br><br>
+<b>Mainstream = very cool</b>
+<br>
+Of course, Oliver's central thesis is correct: "NoSQL databases ... are simply part of our everyday reality." As the velocity, variety, and volume of data continues to explode, the need for NoSQL has never been greater. But where Oliver is wrong is in suggesting this somehow implies they aren't "cool."
+<br><br>
+Mainstream adoption while simultaneously balancing inbound "hipster" interest is very, very cool. But what isn't cool, according to Stirman, is the old "NoSQL" term:
+<br><br>
+    NoSQL as a technology isn't dying, it's evolving. However, NoSQL as a term is dying, partially because it was never very helpful, and partially because the database market is maturing -- small players won't survive, and legacy vendors are in a race to embrace the vision delivered by innovators like MongoDB.
+<br><br>
+Indeed, while the principles that have driven NoSQL adoption remain as relevant (and hip) as ever -- flexibility, performance, and scalability -- the term is ready to be tossed. As Gartner notes in its Magic Quadrant for Operational Database Management Systems: "By 2017, the 'NoSQL' label will cease to distinguish DBMSs, which will result in it falling out of use."
+<br><br>
+What about Oliver's implication that Spark is hotter than NoSQL?
+<br><br>
+As much as Spark is in the news these days -- rightly so -- there's still nowhere near the level of interest as other big data technologies, even compared to the Hadoop, as measured by general search interest. To Oliver's point, however, Couchbase interest falls below the Spark threshold. No buzz there.
+<br><br>
+Meanwhile, the world is looking well beyond Hadoop to solve its big data needs -- and NoSQL is top-of-mind.
+<br><br>
+Is NoSQL still hip, still cool? Of course it is. The fact that NoSQL has hit mainstream adoption hasn't dampened its cool factor, nor has it diminished ongoing interest from the cutting-edge hacker crowd. A new NoSQL database is born every day, helping to push the innovation envelope for both NoSQL and RDBMS alike.
+<br><br>
+Frankly, it's pretty darn cool.
+
+        <hr>
+
+        <!-- Pagination -->
+        <div class="row text-center">
+            <div class="col-lg-12">
+                <ul class="pagination">
+
+                    <li class="active">
+                        <a href="clanky.html">Späť</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; NoSQL.sk 2016 | <a href="mailto:admin@nosql.sk">admin(@)nosql.sk</a>  
+                    
+                    <a  href="http://www.facebook.com/michal.szekely" target="_blank">
+                       <i class="fa fa-facebook-square" style="font-size:20px"></i></a>
+  
+                    <a  href="https://www.linkedin.com/in/michal-szekely-435076a?trk=hp-identity-name"  target="_blank" >
+                      <i class="fa fa-linkedin-square" style="font-size:20px"></i></a>
+                     </p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

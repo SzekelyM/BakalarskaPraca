@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Michal Szekely">
+    <meta name="description" content="Využitie NoSQL databáz v súčasných webových aplikáciách. [Bakalárska práca]. Univerzita Konštantína Filozofa v Nitre. Fakulta prírodných vied. ">
+    <meta name="keywords" content="MongoDB, NoSQL, Model kľúč-hodnota, Model rodiny stĺpcov, Dokumentový model, Grafový model, JavaScript, Relačné databázy, Aggregate, Map_reduce  ">
+    <title>...: Nosql.sk :...</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/small-business.css" rel="stylesheet">
+    <link href="css/one-page-wonder.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">    
+    <link href="css/freelancer.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <img src="_grf/logo.png" alt="">
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="page-scroll"><a href="about.html">O nás</a></li>
+                    <li class="page-scroll"><a href="clanky.html">NoSQL Novinky</a></li>
+                    <li class="page-scroll"><a href="download.html">Download</a></li>
+                    <li class="page-scroll"><a href="cl1.html">Apache dashboard</a></li>                  
+                    <li class="page-scroll"><a href="contact.html">Kontakt</a></li>                  
+                </ul>
+            </div>
+           <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+
+    <!-- Page Content -->
+<div class="container">
+
+<div class="page-header">
+    <h1>How to choose a NoSQL analytics system</h1>
+<h4>A general-purpose NoSQL analytics solution must have eight essential characteristics; here's what to look fo </h4>
+</div>
+NoSQL operational databases are rapidly gaining adoption. They're easier to use, operate, and scale than their relational counterparts, and they enable faster development of richer applications. Increasingly, they power modern Web, mobile, and IoT applications.
+<br><br>
+Already, NoSQL data is the fabric that connects the more than 200,000 APIs (a number that continues to rise) in the world, each of which speaks the language of JSON or XML. Within the next five years, the vast majority of the data in the world will be semi-structured. Stated differently, the tabular data that powers today's relational analytics is going to be an insignificant fraction of the total data in the world. 
+<br><br>
+In this brave new world, businesses need a way to derive analytic value from their NoSQL data -- to help them see and understand the data in a way that drives business value. How will you choose a NoSQL analytics system? Here are some defining characteristics to aid you in your search. (For more detail, see my whitepaper.) 
+<br><br>
+<b>A brief history</b>
+<br>
+Historically, NoSQL analytics has been a low-level coding affair, with occasional reprieves for specific data models (such as XQuery for lightweight analytics over XML data). Complex ETL processes often have been built to extract out a flat subset of data for relocation to relational systems, allowing companies to leverage legacy analytics tooling.
+<br><br>
+Recently, however, the industry has seen three distinct approaches to the problem of NoSQL analytics, each designed to eliminate the need for unnecessary coding and ETL:
+<br><br>
+    Relational extensions. Existing relational systems are retrofitted with semi-structured data types and functions to probe them. For example, Postgres, Presto, and SparkSQL all have JSON accessor functions. These systems still have a relational core, however, and the limitations that come along with that.
+ <br>   Virtualization drivers. These drivers take NoSQL data and expose it as a collection of virtual tables in a way that's compatible with existing analytics and BI tooling. Due to the impedance mismatch between relational and NoSQL data models, they frequently discard important information that results in the loss of analytic flexibility.
+ <br>   Post-relational analytics. These are novel systems designed specifically for analytics over semi-structured data. Specifications include JSONiq (XPath for JSON), SQL++, and MRA, while analytics systems include Apache Drill and Quasar.
+<br><br>
+Each approach has its advantages and disadvantages, which will become more apparent in my discussion of the capabilities required for general-purpose NoSQL analytics below.
+<br><br>
+<b>Eight essential characteristics</b>
+<br>
+With the growing number of choices for NoSQL analytics, it's more important than ever to have a way to judge the suitability of any system for general-purpose NoSQL analytics.
+<br><br>
+Toward that end, I have identified eight characteristics that a system must have in order to handle routine analytic use cases over various NoSQL data models. A system is a good fit for general-purpose NoSQL analytics precisely to the degree it satisfies these characteristics.
+<br><br>
+<b>1. Generic data model</b>
+<br>
+NoSQL analytics systems must possess a data model generic enough to abstract over the differences between common NoSQL data models. In principle, there are infinitely many NoSQL data models, but in practice, a general-purpose NoSQL analytics system should at least support the following: 
+<br>
+    Heterogeneous containers, including sets, maps, and arrays
+  <br>  A reference type capable of representing edges and foreign keys
+  <br>  Common atomic types, including booleans, numbers, and dates
+<br><br>
+An abstraction similar to the above is sufficient to losslessly represent the majority of NoSQL data models, including those utilized by JSON, XML, MongoDB, Elasticsearch, MarkLogic, CouchDB, Cassandra, Neo4j, Aerospike, and many others.
+<br><br>
+<b>2. Isomorphic data model</b>
+<br>
+NoSQL analytics systems must represent data losslessly.That is, they may not use a data model that discards information present in the original data.
+<br><br>
+Discarding information present in the original data prevents answering certain kinds of analytic questions. The more information is thrown away, the greater the analytic impact. 
+<br><br>
+This characteristic allows businesses to extract maximum value from their NoSQL data. Systems that do not possess this characteristic -- including the variety of JDBC/ODBC drivers on the market -- invariably fail with common analytic scenarios on NoSQL data.
+<br><br>
+<b>3. Multidimensionality</b>
+<br>
+A NoSQL analytics system must allow analytic operations on nested dimensions of data.
+<br><br>
+Most NoSQL data is heavily nested ("de-normalized"). For example, a document might contain a list of documents, which in turn contain lists of other documents. In order to answer arbitrary analytical questions on the data, a system must allow the slicing, dicing, and aggregation of these nested dimensions of data.
+<br><br>
+<b>4. Unified schema/data</b>
+<br>
+NoSQL analytics systems must unify analytic operations on both "schema" and data.
+<br><br>
+In semi-structured data, the schema is simply data (keys in a map for JSON data, tags for XML, and so on). Sometimes, a NoSQL schema encodes what a relational system would consider schema. But other times, it encodes data (for example, when a map or document is used to build a real-time histogram in a NoSQL database).
+<br><br>
+NoSQL analytics systems must offer the same capabilities on schema as on data.
+<br><br>
+<b>8. Structural patterns</b>
+<br>
+NoSQL analytics systems must support structural pattern matching that is capable of filtering and extracting from variable length, multidimensional patterns.
+<br><br>
+Numerous common analytic scenarios on NoSQL data (including event-oriented data, document data, and XML and HTML content) cannot be satisfied without an ability to search for structural patterns in the data.
+<br><br>
+While most relational systems have a special-purpose function for pattern matching on events, the NoSQL analog of such functionality must be much more sophisticated due to the increased richness of the data model.
+<br><br>
+
+<b>Up from SQL</b>
+<br>
+With the growth of NoSQL data, the question of how to derive analytic value from this data has never been more important to companies embracing modern data technologies.
+<br><br>
+Coding and ETL have provided stopgap solutions, but recent approaches provide first-class solutions to the problem. These include extensions to legacy relational systems, drivers that provide virtual relational models on top of NoSQL data, and "NoSQL first" analytics systems. 
+<br><br>
+In evaluating NoSQL analytics systems, eight characteristics stand out. A system must have all eight in order to be able to handle common analytic scenarios on arbitrary NoSQL data.
+<br><br>
+
+NoSQL analytics systems must be strictly more expressive than relational systems.
+<br><br>
+Even NoSQL data needs to be joined with other data sets (as well as filtered, sorted, and aggregated). Thus, NoSQL systems must have all of the same capabilities as their relational cousins. In other words, they must be postrelational rather than nonrelational.
+<br><br>
+<b>6. Polymorphic queries</b>
+<br>
+NoSQL analytics systems must support queries across the common elements of structurally heterogeneous values.
+<br><br>
+There are numerous analytic scenarios where some structure is known and relatively stable across a set of values, but other parts are unknown and vary (for example, clickstream data or product catalog data). These cases demand the ability to perform analytics across the common elements of a set of values that otherwise exhibit arbitrary heterogeneity.
+<br><br>
+<b>7. Dynamic type discovery and conversion</b>
+<br>
+NoSQL analytics systems must support runtime type identification and conversion so that custom business logic can be used to dictate analytic treatment of variation.
+<br><br>
+All relational systems support conversion of atomic values (for example, converting a string to a number), but not type identification, because the structure is constant across a column. Because NoSQL data models are richer and data structure is dynamic, NoSQL analytics systems must support type identification as well as far richer conversions and identifications than would be necessary in a relational system.
+<br><br>
+<b>8. Structural patterns</b>
+<br>
+NoSQL analytics systems must support structural pattern matching that is capable of filtering and extracting from variable length, multidimensional patterns.
+<br><br>
+Numerous common analytic scenarios on NoSQL data (including event-oriented data, document data, and XML and HTML content) cannot be satisfied without an ability to search for structural patterns in the data.
+<br><br>
+While most relational systems have a special-purpose function for pattern matching on events, the NoSQL analog of such functionality must be much more sophisticated due to the increased richness of the data model.
+<br><br>
+<b>Up from SQL</b>
+<br>
+With the growth of NoSQL data, the question of how to derive analytic value from this data has never been more important to companies embracing modern data technologies.
+<br><br>
+Coding and ETL have provided stopgap solutions, but recent approaches provide first-class solutions to the problem. These include extensions to legacy relational systems, drivers that provide virtual relational models on top of NoSQL data, and "NoSQL first" analytics systems. 
+<br><br>
+In evaluating NoSQL analytics systems, eight characteristics stand out. A system must have all eight in order to be able to handle common analytic scenarios on arbitrary NoSQL data.
+<br><br>
+Together, these characteristics define what it means for a system to support generalized NoSQL analytics. In addition, they can help guide those of you who are looking for a way to objectively evaluate competing NoSQL analytics systems.
+
+        <hr>
+
+        <!-- Pagination -->
+        <div class="row text-center">
+            <div class="col-lg-12">
+                <ul class="pagination">
+
+                    <li class="active">
+                        <a href="clanky.html">Späť</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; NoSQL.sk 2016 | <a href="mailto:admin@nosql.sk">admin(@)nosql.sk</a>  
+                    
+                    <a  href="http://www.facebook.com/michal.szekely" target="_blank">
+                       <i class="fa fa-facebook-square" style="font-size:20px"></i></a>
+  
+                    <a  href="https://www.linkedin.com/in/michal-szekely-435076a?trk=hp-identity-name"  target="_blank" >
+                      <i class="fa fa-linkedin-square" style="font-size:20px"></i></a>
+                     </p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

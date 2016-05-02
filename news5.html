@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Michal Szekely">
+    <meta name="description" content="Využitie NoSQL databáz v súčasných webových aplikáciách. [Bakalárska práca]. Univerzita Konštantína Filozofa v Nitre. Fakulta prírodných vied. ">
+    <meta name="keywords" content="MongoDB, NoSQL, Model kľúč-hodnota, Model rodiny stĺpcov, Dokumentový model, Grafový model, JavaScript, Relačné databázy, Aggregate, Map_reduce  ">
+    <title>...: Nosql.sk :...</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/small-business.css" rel="stylesheet">
+    <link href="css/one-page-wonder.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">    
+    <link href="css/freelancer.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <img src="_grf/logo.png" alt="">
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="page-scroll"><a href="about.html">O nás</a></li>
+                    <li class="page-scroll"><a href="clanky.html">NoSQL Novinky</a></li>
+                    <li class="page-scroll"><a href="download.html">Download</a></li>
+                    <li class="page-scroll"><a href="cl1.html">Apache dashboard</a></li>                  
+                    <li class="page-scroll"><a href="contact.html">Kontakt</a></li>                  
+                </ul>
+            </div>
+           <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+
+    <!-- Page Content -->
+<div class="container">
+
+<div class="page-header">
+    <h1>10 tips for integrating NoSQL databases in your business</h1>
+<h4>NoSQL databases provide the agility, scalability, performance and availability to support many applications today, but implementing them is not always easy </h4>
+</div>
+<img src="http://images.techhive.com/images/article/2016/02/data_integration-100644898-primary.idge.jpg" alt="" align="left" height="150" vspace="5" hspace="10">
+Data is driving innovation and growth for business, but only for businesses prepared to handle data effectively.
+<br><br>
+While relational databases have their place, today's data complexity, volume and demand make them ill-suited to certain applications. In many of these cases, NoSQL technologies are stepping in to fill the gap. Still, implementing NoSQL systems into your organization may not be easy.
+<br><br>
+It's worth the effort, but it requires careful planning and organizational buy-in — a critical piece that many IT organizations overlook, says Joe Pasqua, executive vice president of Products at MarkLogicthe schema-agnostic enterprise NoSQL database brought in to rescue Healthcare.gov.
+<br><br>
+Pasqua shares these 10 tips for smoothly integrated NoSQL systems into your organization.
+<br><br>
+<b>1. Develop a use case</b>
+<br><br>
+The first step to a successful NoSQL project is no secret, Pasqua says. You need to develop a solid use case with a clear understanding of what you're trying to achieve.
+<br><br>
+"Without that companies are pretty much doomed to failure," Pasqua says. "We've seen a lot of that in the big data space. I've had meetings with folks who say we need Hadoop, we've got to get Hadoop in. They're not sure why or what they're trying to accomplish, but the CIO told them that they need Hadoop. Only by the greatest stroke of luck can that go well. They want to get on board with it, but sometimes that desire really gets in the way of understanding what the business value is going to be."
+<br><br>
+NoSQL is often the right choice for projects requiring massive scale and enormous amounts of data: personalization, user profile management, extracting information from operational data in real-time, content management, catalogs, 360 degree views of customers, mobile applications, Internet of Things applications, digital communications and fraud detection.
+<br><br>
+<b>2. Determine how the NoSQL model fits with existing database implementations</b>
+<br>
+Once you have understood your use case, you can determine whether NoSQL is the right fit for your project. It's possible existing tools that your team is already familiar with will fit the bill. But Pasqua warns against trying to force square pegs into round holes.
+<br><br>
+"We see this a lot in our business," Pasqua says. "They'll figure out their use case and know what they want to accomplish. Then they'll say, 'Let me try to do that using the tools and technology we already have.' For a large number of projects, particularly ones that require big data or data agility, they often find their existing tools don't work. Sometimes they'll try to use them for a couple of years before giving into the fact that they don't work."
+<br><br>
+That was one of the issues in the Healthcare.gov debacle, Pasqua says. The service was originally built on Oracle databases, but the need for a strict schema underlying the data put enormous strain on the system. The use case required the schema agility of NoSQL. MarkLogic was one of the vendors brought in to help.
+<br><br>
+"It's really important to understand when those tools don't fit and when NoSQL really is a better fit for your problem space," Pasqua adds.
+<br><br>
+<b>3. Acknowledge that NoSQL will be disruptive</b>
+<br>
+If you make the decision to implement NoSQL in your business infrastructure, it's essential to acknowledge — and plan for — the fact that it will prove a disruptive force.
+<br><br>
+"NoSQL is disruptive," Pasqua says. "It's disruptive in a lot of ways. From a developer perspective, people want to use their existing tools and technologies. Even when they decide they want to do something differently, they've got a whole mindset about how you build applications and use databases. It's natural to try to take that experience and try to make NoSQL work the same way. And it doesn't. They try to use NoSQL as if it were SQL and end up with the worst of both worlds. You need to step back and think about what's the right way to actually use NoSQL. Don't try to fight with it and make it a relational database. This is a new model, it's a disruptive model, let's take advantage of it."
+<br><br>
+
+For example, the traditional rule of thumb is that you've got to have an army of database administrators (DBA) for any big application you've got, Pasqua says. But he notes that in a NoSQL world, he typically sees one DBA where there may have been 10 previously. You can free up those employees and apply them to something else.
+<br><br>
+The cost model, too, will change. NoSQL is a scale-out, commodity hardware-based technology.
+<br><br>
+"The way you buy us, the way you use us, is really very different," Pasqua says. "You can buy really cost-effective hardware and grow as you need it. That really affects the procurement process. If you're not buying $10 million or $20 million of hardware up front, it allows you to move very quickly through the procurement cycle. The folks who are doing this well take advantage of that."
+<br><br>
+<b>4. Start small, and then ramp up</b>
+<br>
+It's hard to start small with relational technologies. If you're a big organization, you've got tens of thousands of customers, which could be individuals or other companies, and you frequently face the challenge of dealing with lots of different policies around data or merging the data of another company you've acquired.
+<br>
+"Your requirement to bring data together from different data silos is large and growing every day," Pasqua says.
+<br><br>
+Solving these data silo issues with relational technologies mean you have to identify all the different silos from which you want to bring data together, create a schema that harmonizes that data and develop and deploy the ETL processes to bring all that data together. The process can take months or longer.
+<br><br>
+"Then just as you see the light at the end of the tunnel, you create a new product or acquire a new company or have a new regulatory requirement and you're back to step zero again," Pasqua says. "You have to do all the data modeling up front."
+<br><br>
+NoSQL's scale-out, commodity-based architecture and its schema flexibility means that you can start small with some data and scale your efforts as necessary. You can start with messy, unstructured data and get value from it right away, Pasqua says, then add structure to it over time as necessary.
+<br><br>
+
+<b>5. Identify decision-makers and implementers in your organization</b>
+<br>
+This isn't unique to NoSQL. When dealing with disruptive change, change management may be your biggest hurdle.
+<br><br>
+"Without the decision-makers, you don't get anywhere," Pasqua says. "But you also have to have the implementers on board."
+<br><br>
+The nitty-gritty details of implementation can make or break your initiative, so having the people who put the technology into place on your side can make all the difference.
+<br><br>
+<b>6. Identify the processes that will inhibit and enable the initiative</b>
+<br>
+It is essential to rethink your processes in a NoSQL world. Inertia could be one of your biggest inhibitors. 
+ <br><br>
+"The status quo, the inherent desire to do things the way they've always been done — if you don't change any of your processes, that's going to slow things down," Pasqua says.
+<br><br>
+Understanding your use case and the disruptive changes brought about by the new technology will allow you to mold your processes to take advantage of new capabilities. Key architects and technical leads can help you shape those processes and get their organizations on board.
+<br><br>
+
+<b>7. Determine whether you have the right skills</b>
+<br>
+It's critical to have the skills to modify application design procedures and system application architecture to accommodate NoSQL, Pasqua says.
+<br><br>
+"Having the right skills is critical," he says. "It's not that NoSQL is particularly complicated. In fact, it's typically simpler but it's different. Many people have been in the database business for 30 years and the only things they've ever used is relational. They don't have any trouble learning NoSQL, but you really have to take the time."
+<br><br>
+Training is a crucial part of the process. Pasqua notes that MarkLogic offers up all of its training for free, whether or not you're a customer.
+<br><br>
+<b>8. Gauge understanding of the NoSQL DBMS and query languages</b>
+<br>
+Make sure to gauge your organization's understanding of NoSQL and how it's used.
+<br><br>
+"The folks you have already are smart database people," Pasqua says. "They won't have any trouble understanding NoSQL. It's not an insurmountable problem from a technical approach. It's more of a cultural thing."
+<br><br>
+<b>9. Establish a sense of urgency</b>
+<br>
+Help all stakeholders understand the need for your NoSQL implementation and what sort of return they can expect.
+<br><br>
+If you're turning to NoSQL, chances are someone in your organization is already up against a deadline and can't see the way forward.
+<br><br>
+"It's usually someone who has a problem — big data, data integration — they've already beat their heads against the wall trying to solve it with their existing tools and they've burned a lot of time doing that," Pasqua says. "They've already got time pressure on their heads because they've spent a lot of time going down a blind alley. The challenge we see is bringing that sense of urgency across to stakeholders."
+<br><br>
+It may be that the line of business has some business-oriented or regulatory-oriented deadline looming over their heads, Pasqua says. You've got to make sure that your technical people and the people in charge of procurement have the right sense of urgency to meet that deadline.
+<br><br>
+"Start small, get started quickly and ramp up," he says. "Get it across to all the stakeholders."
+<br><br>
+<b>10. Lean on those with experience, including peers and consultants</b>
+<br>
+Experience makes all the difference, Pasqua says.
+<br><br>
+"Because technologies like MarkLogic really are disruptive, it's easy to fall into some of traps," Pasqua says. "Being able to go out and really network with and work with others who have used and profited from using these types of new technologies is super important. If somebody is using MarkLogic, they're using it to run the bank or as part of their training system. Healthcare.gov is using it to run the exchange. Really one of the best things you can do is go out and talk to someone who's done it. Talk to someone on the technology side, the cultural side and the process side. Figure out how you can make this work in your organization to your best advantage."
+<br><br>
+If you do bring in third-party consultants, Pasqua says seek out professional services that are structured to bring in architects and advisors that will get your people off on the right footing. That's much more self-sustaining than professional services that come in and live with you forever, he says. 
+ 
+ 
+ 
+        <hr>
+
+        <!-- Pagination -->
+        <div class="row text-center">
+            <div class="col-lg-12">
+                <ul class="pagination">
+
+                    <li class="active">
+                        <a href="clanky.html">Späť</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; NoSQL.sk 2016 | <a href="mailto:admin@nosql.sk">admin(@)nosql.sk</a>  
+                    
+                    <a  href="http://www.facebook.com/michal.szekely" target="_blank">
+                       <i class="fa fa-facebook-square" style="font-size:20px"></i></a>
+  
+                    <a  href="https://www.linkedin.com/in/michal-szekely-435076a?trk=hp-identity-name"  target="_blank" >
+                      <i class="fa fa-linkedin-square" style="font-size:20px"></i></a>
+                     </p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
