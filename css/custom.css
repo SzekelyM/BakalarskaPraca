@@ -1,0 +1,20 @@
+/*!
+ * Start Bootstrap - Small Business HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+.lead2{
+  font-size:14px; 
+  text-align: justify;
+}
+
+
+.scripty{
+  border: 1px solid #000000;
+  background-color: #f0f0f0;
+  padding: 5px 5px 5px 5px;
+  font-size:13px; 
+  text-align: justify;
+  font-style: italic;
+}
