@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Michal Szekely">
+    <meta name="description" content="Využitie NoSQL databáz v súčasných webových aplikáciách. [Bakalárska práca]. Univerzita Konštantína Filozofa v Nitre. Fakulta prírodných vied. ">
+    <meta name="keywords" content="MongoDB, NoSQL, Model kľúč-hodnota, Model rodiny stĺpcov, Dokumentový model, Grafový model, JavaScript, Relačné databázy, Aggregate, Map_reduce  ">
+    <title>...: Nosql.sk :...</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/small-business.css" rel="stylesheet">
+    <link href="css/one-page-wonder.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">    
+    <link href="css/freelancer.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <img src="_grf/logo.png" alt="">
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="page-scroll"><a href="about.html">O nás</a></li>
+                    <li class="page-scroll"><a href="clanky.html">NoSQL Novinky</a></li>
+                    <li class="page-scroll"><a href="download.html">Download</a></li>
+                    <li class="page-scroll"><a href="cl1.html">Apache dashboard</a></li>                  
+                    <li class="page-scroll"><a href="contact.html">Kontakt</a></li>                  
+                </ul>
+            </div>
+           <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+
+    <!-- Page Content -->
+<div class="container">
+
+<div class="page-header">
+    <h1>How big data is changing the database landscape for good</h1>
+<h4>From NoSQL to NewSQL to 'data algebra' and beyond, the innovations are coming fast and furious</h4>
+</div>
+<img src="http://images.techhive.com/images/idgnsImport/2015/08/id-2966776-binary4-100605167-orig.jpg" alt="" align="left" height="150" vspace="5" hspace="10">
+Mention the word "database," and most people think of the venerable RDBMS that has dominated the landscape for more than 30 years. That, however, may soon change.
+<br><br>
+A whole crop of new contenders are now vying for a piece of this key enterprise market, and while their approaches are diverse, most share one thing in common: a razor-sharp focus on big data.
+<br><br>
+Much of what's driving this new proliferation of alternatives is what's commonly referred to as the "three V's" underlying big data: volume, velocity and variety.
+<br><br>
+Essentially, data today is coming at us faster and in greater volumes than ever before; it's also more diverse. It's a new data world, in other words, and traditional relational database management systems weren't really designed for it.
+<br><br>
+"Basically, they cannot scale to big, or fast, or diverse data," said Gregory Piatetsky-Shapiro, president of KDnuggets, an analytics and data-science consultancy.
+<br><br>
+That's what Harte Hanks recently found. Up until 2013 or so, the marketing services agency was using a combination of different databases including Microsoft SQL Server and Oracle Real Application Clusters (RAC).
+<br><br>
+"We were noticing that with the growth of data over time, our systems couldn't process the information fast enough," said Sean Iannuzzi, the company's head of technology and development. "If you keep buying servers, you can only keep going so far. We wanted to make sure we had a platform that could scale outward."
+<br><br>
+Minimizing disruption was a key goal, Iannuzzi said, so "we couldn't just switch to Hadoop."
+<br><br>
+Instead, it chose Splice Machine, which essentially puts a full SQL database on top of the popular Hadoop big-data platform and allows existing applications to connect with it, he said.
+<br><br>
+Harte Hanks is now in the early stages of implementation, but it's already seeing benefits, Iannuzzi said, including improved fault tolerance, high availability, redundancy, stability and "performance gains overall."
+<br><br>
+There's a sort of perfect storm propelling the emergence of new database technologies, said Carl Olofson, a research vice president with IDC.
+<br><br>
+First, "the equipment we're using is much more capable of handling large data collections quickly and flexibly than in the past," Olofson noted.
+<br><br>
+In the old days, such collections "pretty much had to be put on spinning disk" and the data had to be structured in a particular way, he explained.
+<br><br>
+Now there's 64-bit addressability, making it possible to set up larger memory spaces, as well as much faster networks and the ability to string multiple computers together to act as single, large databases.
+<br><br>
+"Those things have opened up possibilities that weren't available before," Olofson said.
+<br><br>
+Workloads, meanwhile, have also changed. Whereas 10 years ago websites were largely static, for example, today we have live Web service environments and interactive shopping experiences. That, in turn, demands new levels of scalability, he said.
+<br><br>
+Companies are using data in new ways as well. Whereas traditionally most of our focus was on processing transactions -- recording how much we sold, for instance, and storing that data in place where it could be analyzed -- today we're doing more.
+<br><br>
+Application state management is one example.
+<br><br>
+Say you're playing an online game. The technology must record each session you have with the system and connect them together to present a continuous experience, even if you switch devices or the various moves you make are processed by different servers, Olofson explained.
+<br><br>
+That data must be made persistent so that companies can analyze questions such as "why no one ever crosses the crystal room," for example. In an online shopping context, a counterpart might be why more people aren't buying a particular brand of shoe after they click on the color choices.
+<br><br>
+"Before, we weren't trying to solve those problems, or -- if we were -- we were trying to squeeze them into a box that didn't quite fit," Olofson said.
+<br><br>
+Hadoop is a heavyweight among today's new contenders. Though it's not a database per se, it's grown to fill a key role for companies tackling big data. Essentially, Hadoop is a data-centric platform for running highly parallelized applications, and it's very scalable.
+<br><br>
+By allowing companies to scale "out" in distributed fashion rather than scaling "up" via additional expensive servers, "it makes it possible to very cheaply put together a large data collection and then see what you've got," Olofson said.
+<br><br>
+Among other new RDBMS alternatives are the NoSQL family of offerings, including MongoDB -- currently the fourth most popular database management system, according to DB-Engines -- and MarkLogic.
+<br><br>
+"Relational has been a great technology for 30 years, but it was built in a different era with different technological constraints and different market needs," said Joe Pasqua, MarkLogic's executive vice president for products.
+<br><br>
+Big data is not homogeneous, he said, yet in many traditional technologies, that's still a fundamental requirement.
+<br><br>
+"Imagine the only program you had on your laptop was Excel," Pasqua said. "Imagine you want to keep track of network of friends -- or you're writing a contract. Those don't fit into rows and columns."
+<br><br>
+Combining data sets can be particularly tricky.
+<br><br>
+"Relational says that before you bring all these data sets together, you have to decide how you're going to line up all the columns," he added. "We can take in any format or structure and start using it immediately."
+<br><br>
+NoSQL databases don't use a relational data model, and they typically have no SQL interface. Whereas many NoSQL stores compromise consistency in favor of speed and other factors, MarkLogic pitches its own offering as a more consistency-minded option tailored for enterprises.
+<br><br>
+There's considerable growth in store for the NoSQL market, according to Market Research Media, but not everyone thinks it's the right approach -- at least, not in all cases.
+<br><br>
+NoSQL systems "solved many problems with their scale-out architecture, but they threw out SQL," said Monte Zweben, Splice Machine's CEO. That, in turn, poses a problem for existing code.
+<br><br>
+Splice Machine is an example of a different class of alternatives known as NewSQL -- another category expecting strong growth in the years ahead.
+<br><br>
+"Our philosophy is to keep the SQL but add the scale-out architecture," Zweben said. "It's time for something new, but we're trying to make it so people don't have to rewrite their stuff."
+<br><br>
+Deep Information Sciences has also chosen to stick with SQL, but it takes yet another approach.
+<br><br>
+The company's DeepSQL database uses the same application programming interface (API) and relational model as MySQL, meaning that no application changes are required in order to use it. But it addresses data in a different way, using machine learning.
+<br><br>
+DeepSQL can automatically adapt for physical, virtual or cloud hosts using any workload combination, the company says, thereby eliminating the need for manual database optimization.
+<br><br>
+Among the results are greatly increased performance as well as the ability to scale "into the hundreds of billions of rows," said Chad Jones, the company's chief strategy officer.
+<br><br>
+An altogether different approach comes from Algebraix Data, which says it has developed the first truly mathematical foundation for data.
+<br><br>
+Whereas computer hardware is modeled mathematically before it's built, that's not the case with software, said Algebraix CEO Charles Silver.
+<br><br>
+"Software, and especially data, has never been built on a mathematical foundation," he said. "Software has largely been a matter of linguistics."
+<br><br>
+Following five years of R&D, Algebraix has created what it calls an "algebra of data" that taps mathematical set theory for "a universal language of data," Silver said.
+<br><br>
+"The dirty little secret of big data is that data still sits in little silos that don't mesh with other data," Silver explained. "We've proven it can all be represented mathematically, so it all integrates."
+<br><br>
+Equipped with a platform built on that foundation, Algebraix now offers companies business analytics as a service. Improved performance, capacity and speed are all among the benefits Algebraix promises.
+<br><br>
+Time will tell which new contenders succeed and which do not, but in the meantime, longtime leaders such as Oracle aren't exactly standing still.
+<br><br>
+"Software is a very fashion-conscious industry," said Andrew Mendelsohn, executive vice president for Oracle Database Server Technologies. "Things often go from popular to unpopular and back to popular again."
+<br><br>
+Many of today's startups are "bringing back the same old stuff with a little polish or spin on it," he said. "It's a new generation of kids coming out of school and reinventing things."
+<br><br>
+SQL is "the only language that lets business analysts ask questions and get answers -- they don't have to be programmers," Mendelsohn said. "The big market will always be relational."
+<br><br>
+As for new types of data, relational database products evolved to support unstructured data back in the 1990s, he said. In 2013, Oracle's namesake database added support for JSON (JavaScript Object Notation) in version 12c.
+<br><br>
+Rather than a need for a different kind of database, it's more a shift in business model that's driving change in the industry, Mendelsohn said.
+<br><br>
+"The cloud is where everybody is going, and it's going to disrupt these little guys," he said. "The big guys are all on the cloud already, so where is there room for these little guys?
+<br><br>
+"Are they going to go on Amazon's cloud and compete with Amazon?" he added. "That's going to be hard."
+<br><br>
+Oracle has "the broadest spectrum of cloud services," Mendelsohn said. "We're feeling good about where we're positioned today."
+<br><br>
+Rick Greenwald, a research director with Gartner, is inclined to take a similar view.
+<br><br>
+"The newer alternatives are not as fully functional and robust as traditional RDBMSes," Greenwald said. "Some use cases can be addressed with the new contenders, but not all, and not with one technology."
+<br><br>
+Looking ahead, Greenwald expects traditional RDBMS vendors to feel increasing price pressure, and to add new functionality to their products. "Some will freely bring new contenders into their overall ecosystem of data management," he said.
+<br><br>
+As for the new guys, a few will survive, he predicted, but "many will either be acquired or run out of funding."
+<br><br>
+Today's new technologies don't represent the end of traditional RDBMSes, "which are rapidly evolving themselves," agreed IDC's Olofson. "The RDBMS is needed for well-defined data -- there's always going to be a role for that."
+<br><br>
+But there will also be a role for some of the newer contenders, he said, particularly as the Internet of Things and emerging technologies such as Non-Volatile Dual In-line Memory Module (NVDIMM) take hold.
+<br><br>
+There will be numerous problems requiring numerous solutions, Olofson added. "There's plenty of interesting stuff to go around."
+
+        <hr>
+
+        <!-- Pagination -->
+        <div class="row text-center">
+            <div class="col-lg-12">
+                <ul class="pagination">
+
+                    <li class="active">
+                        <a href="clanky.html">Späť</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; NoSQL.sk 2016 | <a href="mailto:admin@nosql.sk">admin(@)nosql.sk</a>  
+                    
+                    <a  href="http://www.facebook.com/michal.szekely" target="_blank">
+                       <i class="fa fa-facebook-square" style="font-size:20px"></i></a>
+  
+                    <a  href="https://www.linkedin.com/in/michal-szekely-435076a?trk=hp-identity-name"  target="_blank" >
+                      <i class="fa fa-linkedin-square" style="font-size:20px"></i></a>
+                     </p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Michal Szekely">
+    <meta name="description" content="Využitie NoSQL databáz v súčasných webových aplikáciách. [Bakalárska práca]. Univerzita Konštantína Filozofa v Nitre. Fakulta prírodných vied. ">
+    <meta name="keywords" content="MongoDB, NoSQL, Model kľúč-hodnota, Model rodiny stĺpcov, Dokumentový model, Grafový model, JavaScript, Relačné databázy, Aggregate, Map_reduce  ">
+    <title>...: Nosql.sk :...</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/small-business.css" rel="stylesheet">
+    <link href="css/one-page-wonder.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">    
+    <link href="css/freelancer.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <img src="_grf/logo.png" alt="">
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="page-scroll"><a href="about.html">O nás</a></li>
+                    <li class="page-scroll"><a href="clanky.html">NoSQL Novinky</a></li>
+                    <li class="page-scroll"><a href="download.html">Download</a></li>
+                    <li class="page-scroll"><a href="cl1.html">Apache dashboard</a></li>                  
+                    <li class="page-scroll"><a href="contact.html">Kontakt</a></li>                  
+                </ul>
+            </div>
+           <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+
+    <!-- Page Content -->
+<div class="container">
+
+<div class="page-header">
+    <h1>MongoDB and Redis pair volume with velocity</h1>
+<h4>For new kinds of high-capacity, real-time applications, two databases are better than one </h4>
+</div>
+<img src="http://images.techhive.com/images/article/2015/03/mongodb-100573521-primary.idge.jpg" alt="" align="left" height="150" vspace="5" hspace="10">
+MongoDB and Redis both fall into the NoSQL category, but that’s where the similarities end. Disk-based MongoDB is optimized for operational simplicity, schema-free design, and very large data volumes. Compared to relational databases, MongoDB works really well if data requires complex processing but doesn’t fit a rigid schema. MongoDB scales on commodity hardware easily and helps developers adapt to changing needs faster and more cost effectively than relational databases.
+<br><br>
+Redis, while also schema-free, is an in-memory data structure store, frequently used as a database, cache, or message broker. Unlike other in-memory stores, Redis persists data. It is popular with developers because of its versatile, optimized data structures -- sets, sorted sets, hashes, lists, strings, bit arrays -- which deliver efficient in-database operations such as set comparisons, list pull-push operations, and range queries.
+<br><br>
+Purpose-built for performance, Redis allows developers to run most operations on these structures at the lowest possible complexity and highest possible speed. Because of their differences, MongoDB and Redis can be complementary for use cases such as mobile, IoT, APIs, massive Web apps, and other applications where data is generated too fast for it to be digested easily by a disk-based database alone.
+<br><br>
+MongoDB is great at handling any volume or variety of data being generated. However, extreme velocity poses a challenge to any disk-based database. When there are millions of data points coming at an application, using a disk-based database directly means you run the risk of losing data or creating excessively long queues to store data that's waiting to be processed. Thus, Redis is commonly used as a data ingestion buffer for MongoDB. With Redis running very efficiently in memory, it becomes simple to enable real-time analysis of fast-moving data by shifting some of the processing to Redis.
+<br><br>
+A growing number of use cases are emerging where MongoDB and Redis complement each other. The following are examples of real-world applications that combine MongoDB and Redis to store data at scale and process data incredibly fast.
+<br><br>
+Real-time analytics service. A Google Analytics-like service to large websites and Web-based applications provides insights into user behavior by collecting millions of event data points and aggregating and segmenting this data to glean intelligence. The primary data store is MongoDB, given its strengths in handling data with varying schemas. Redis is used for real-time analysis, calculations, and display of the high-volume event data that it collects.
+<br><br>
+Redis is also used for sessionizing data. Every event collected from an application or website belongs to a session that a user starts against Redis. Documents with tens or thousands of events create a stream of data that requires some amount of unraveling. When there are hundreds and thousands of users, event streams related to many users are interleaved. Updating each document with many small updates can be accomplished with disk-based MongoDB, but the expense of the operation is high and Redis’ hash data structure can make short work of the problem.
+<br><br>
+Hashes can be used to store event data by session. Keeping track of sessions that need to be timed out is also nontrivial when there are thousands of sessions, but Redis has built-in key expiration and timeout setting functionality that can be used to end sessions. Keyspace notifications allow users to subscribe to expired events and trigger an offload to MongoDB.
+<br><br>
+Real-time navigation service. Real-time navigation involves a huge amount of data that must constantly be updated with changing conditions. A navigation service, like Waze or Google Maps but with a focus on public transportation, combines MongoDB and Redis to support tens of millions of users. MongoDB stores static information such as destinations, routes, and vehicles, while real-time reporting from apps on mobile devices, user reports of current traffic conditions, and GPS transponder data are fed into Redis, so users can know the state of live traffic and plan their routes on the fly.
+<br><br>
+Massively multiplayer online game. A game catering to thousands of teams with hundreds of players each, all competing for resources and control, has unique real-time requirements. Here MongoDB stores information such as tournament profiles, resources, and resource profiles, while Redis manages game progress, user scores, and everything else that requires rapid updates and displays.
+<br><br>
+Redis sorted sets are useful in these scenarios. The ZADD command adds users to the sorted set in the order of their score, and the ZINCRBY command simply increments scores by a specified number.
+<br><br>
+Online dating application. While there are many thousands of dating applications, this particular one caters to immediately finding groups of people by geographical proximity. MongoDB stores user profiles, while Redis tracks the location of users in real time and instantly reconciles their preferences with those of others.
+<br><br>
+Redis commands like GEOADD can add geospatial information such as latitude and longitude to a specified key. Further, the data is stored in a sorted set in a way that allows retrieval by proximity commands such as GEORADIUS or GEORADIUS by member.
+<br><br>
+Internet of things application. An environmental monitoring application collects real-time information such as temperature, humidity, and CO2 levels from sensors dropped into heavily forested areas in order to detect forest fires and track other environmental problems. The sensor data, temperature maps, and other variables needed for real-time calculations and alerting are stored in Redis. Historical data is stored in MongoDB.
+<br><br>
+As the first-responder database, Redis not only provides efficient and high-performance data processing (1.5 million operations per second at submillisecond latency with a single AWS EC2 server), it is also a stable, reliable database that can be persisted to disk as needed. When several documents in MongoDB are being updated simultaneously or in very close succession, every update triggers a write to the database. Write operations, with disk-based databases, are expensive operations. If you have thousands or tens of thousands of these per second, you would have to maintain many shards, throw a ton of hardware at the problem, and still have to worry about write latency.
+<br><br>
+Redis offers throughput that is orders of magnitude higher than disk-based databases, and latency that is consistently submillisecond. By using Redis, you can manage the rapid updates in memory while consolidating writes to the disk-based database at a lower frequency. This approach reduces hardware needs and creates savings on operational costs.
+<br><br>
+We are increasingly living in a multiple database world, where MongoDB, one of the most popular NoSQL databases available, and Redis, one of the fastest-growing databases, work in tandem to support new applications that demand both high volume and high velocity. Having already made the move to NoSQL databases, MongoDB shops are finding that the functionality and speed of Redis complements MongoDB for real-time use cases.
+
+
+
+        <hr>
+
+        <!-- Pagination -->
+        <div class="row text-center">
+            <div class="col-lg-12">
+                <ul class="pagination">
+
+                    <li class="active">
+                        <a href="clanky.html">Späť</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; NoSQL.sk 2016 | <a href="mailto:admin@nosql.sk">admin(@)nosql.sk</a>  
+                    
+                    <a  href="http://www.facebook.com/michal.szekely" target="_blank">
+                       <i class="fa fa-facebook-square" style="font-size:20px"></i></a>
+  
+                    <a  href="https://www.linkedin.com/in/michal-szekely-435076a?trk=hp-identity-name"  target="_blank" >
+                      <i class="fa fa-linkedin-square" style="font-size:20px"></i></a>
+                     </p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

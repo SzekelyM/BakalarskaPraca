@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Michal Szekely">
+    <meta name="description" content="Využitie NoSQL databáz v súčasných webových aplikáciách. [Bakalárska práca]. Univerzita Konštantína Filozofa v Nitre. Fakulta prírodných vied. ">
+    <meta name="keywords" content="MongoDB, NoSQL, Model kľúč-hodnota, Model rodiny stĺpcov, Dokumentový model, Grafový model, JavaScript, Relačné databázy, Aggregate, Map_reduce  ">
+    <title>...: Nosql.sk :...</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/small-business.css" rel="stylesheet">
+    <link href="css/one-page-wonder.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">    
+    <link href="css/freelancer.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <img src="_grf/logo.png" alt="">
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="page-scroll"><a href="about.html">O nás</a></li>
+                    <li class="page-scroll"><a href="clanky.html">NoSQL Novinky</a></li>
+                    <li class="page-scroll"><a href="download.html">Download</a></li>
+                    <li class="page-scroll"><a href="cl1.html">Apache dashboard</a></li>                  
+                    <li class="page-scroll"><a href="contact.html">Kontakt</a></li>                  
+                </ul>
+            </div>
+           <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+
+    <!-- Page Content -->
+<div class="container">
+
+<div class="page-header">
+    <h1>SQL on NoSQL? Couchbase 4.0 has a plan</h1>
+<h4>The NoSQL document store's new SQL query language aims to make document data useful to existing and previous-generation analytics and reporting tools</h4>
+</div>
+<img src="http://images.techhive.com/images/idge/imported/imageapi/2014/10/14/09/nosql_0-100520053-primary-idge.jpg" alt="" align="left" height="150" vspace="5" hspace="10">
+Version 4.0 of Couchbase Server, a NoSQL document store that competes with the likes of MongoDB and Cassandra, is now available. Its main mission is to make working with unstructured data (namely JSON) as easy as querying more conventional row-and-column databases.
+<br><br>
+Couchbase is following the success of projects like Spark to provide easy-to-program tools that obtain quick, actionable results. In Couchbase's eyes, SQL is still one of the best ways to accomplish the task
+<br><br>
+<b>I speak SQL to my document store</b>
+<br>
+Couchbase Server 4.0 uses N1QL, a query language that extends the SQL syntax with commands specific to JSON documents. JSON syntax can nest data within other data, so some of the extensions allow developers to unnest documents and treat them as if they were conventional tabular data.
+<br><br>
+The language only targets SQL '92, so it doesn't provide some of the latest and most powerful SQL syntax, nor does it support transactions. But other developer-oriented functions are available, such as the EXPLAIN keyword for describing how the query optimizer processes a statement. Plus, Couchbase plans to add features like transactions over time.
+<br><br>
+InfoWorld's Ian Pointer took a prerelease version of Couchbase 4's N1QL for a test-drive. Based on what he saw, Pointer claimed the view system for Couchbase, which is currently used to extract data from the system, could in time "slowly [fade] away as N1QL becomes the standard for interacting with Couchbase documents." Couchbase wants N1QL to be akin to the SQL that people know and use, not merely a crippled subset of it.
+<br><br>
+Couchbase isn't alone in providing a SQL-like query language. Cassandra has CQL, which has been the official query interface for the system since version 2.0. But N1QL provides some features not offered in Cassandra 2.0, such as JOIN operations. MongoDB also has a SQL connector, slated for the 3.2 release, designed to help interface with third-party products like Tableau -- but it too lacks the ability to perform JOINs.
+<br><br>
+<b>Old school vs. new school</b>
+<br>
+If the transformative power of big data tools is best unleashed through programmatic interfaces -- for example, Couchbase's view and map/reduce jobs -- why are envelope-pushing products like Couchbase, Cassandra, and MongoDB adding old-school SQL interfaces? (The irony of "SQL on NoSQL" is hard to ignore.)
+<br><br>
+One obvious reason is to connect their products to legacy BI tools that use SQL for querying. But another reason, according to Couchbase, is that despite its limitations, SQL allows for rapid application development since a good deal can be accomplished in a query with relatively little code. Sometimes, a simple SQL query is more than enough.
+<br><br>
+Similar claims are made for the Hadoop data-processing framework Spark -- not because it offers its own SQL query mechanism, Spark SQL, but because it provides native data-access methodologies that tend to be less verbose to work with than the competition. Couchbase is touting SQL via N1QL as a way to get results fast while still respecting connectivity with existing BI products.
+<br><br>
+The real change, though, may come when front-end BI products choose to speak the new native languages of big data. Tableau, for instance, added a Spark SQL connector earlier this year -- a possible prelude to deeper integration with Spark.  
+<br><br>
+In the meantime, Couchbase is making itself useful to the SQL-based analytics systems out there right now.
+<br><br>
+
+
+
+        <hr>
+
+        <!-- Pagination -->
+        <div class="row text-center">
+            <div class="col-lg-12">
+                <ul class="pagination">
+
+                    <li class="active">
+                        <a href="clanky.html">Späť</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; NoSQL.sk 2016 | <a href="mailto:admin@nosql.sk">admin(@)nosql.sk</a>  
+                    
+                    <a  href="http://www.facebook.com/michal.szekely" target="_blank">
+                       <i class="fa fa-facebook-square" style="font-size:20px"></i></a>
+  
+                    <a  href="https://www.linkedin.com/in/michal-szekely-435076a?trk=hp-identity-name"  target="_blank" >
+                      <i class="fa fa-linkedin-square" style="font-size:20px"></i></a>
+                     </p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
